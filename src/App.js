@@ -3,13 +3,20 @@ import axios from "axios";
 import "./App.css";
 import Header from "./Components/Header";
 import BottomNav from "./Components/BottomNav";
+import ImageContainer from "./Components/ImageContainer";
 
 function App() {
-  
   return (
     <>
-      <Header />
-      <BottomNav />
+      <div className="app">
+        <header>
+          <Header />
+        </header>
+        <ImageContainer />
+        <footer>
+          <BottomNav />
+        </footer>
+      </div>
     </>
   );
 }

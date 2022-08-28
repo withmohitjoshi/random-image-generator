@@ -1,9 +1,8 @@
 import React from "react";
 import "../Styles/Header.css";
 function Header() {
-  console.log("header rendering");
   return (
-    <header className="header">
+    <header className="header" id="header">
       <h1>Random Images</h1>
     </header>
   );

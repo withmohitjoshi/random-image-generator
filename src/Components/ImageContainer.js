@@ -1,10 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { ImageDownloadUrlContext } from "../App";
 import "../Styles/ImageContainer.css";
-function ImageContainer() {
+function ImageContainer(props) {
+  const imageDownloadUrl = useContext(ImageDownloadUrlContext);
   return (
     <>
       <div className="image-container" id="image-container">
-        <img src="https://picsum.photos/800" />
+        {props.hasError == false ? (
+          props.loading == true ? (
+            <p>Loading ...</p>
+          ) : (
+            <img src={imageDownloadUrl} id="loaded-image" />
+          )
+        ) : (
+          <p>Something went wrong</p>
+        )}
       </div>
     </>
   );

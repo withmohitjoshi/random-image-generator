@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from "react";
 import Header from "./Components/Header";
 import BottomNav from "./Components/BottomNav";
 import ImageContainer from "./Components/ImageContainer";
+import "./App.css";
 import getImage from "./getImage";
 
 export const ImageDownloadUrlContext = React.createContext(
@@ -43,9 +44,9 @@ function App() {
   return (
     <>
       <div className="app">
-        <header>
-          <Header />
-        </header>
+      <header>
+        <Header />
+      </header>
         <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
           <ImageContainer hasError={state.hasError} loading={state.loading} />
           <footer>

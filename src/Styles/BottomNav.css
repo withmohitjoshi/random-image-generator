@@ -1,10 +1,8 @@
 :root {
   --color-bottom-nav-bg: #222831;
-  /* --color--text: #eeeeee; */
-  /* --fw-600: 600; */
 }
 .bottom-nav {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100vw;
   background-color: var(--color-bottom-nav-bg);

@@ -1,0 +1,16 @@
+:root {
+  --color-header-bg: #222831;
+  --color-header-text: #eeeeee;
+  --fw-600: 600;
+}
+.header {
+  width: 100vw;
+  background-color: var(--color-header-bg);
+  padding: clamp(0.35rem, 0.35rem + 0.6vw, 0.45rem) 0;
+  text-align: center;
+}
+.header h1 {
+  color: var(--color-header-text);
+  font-weight: var(--fw-600);
+  font-size: clamp(1rem, 0.8rem + 4vw, 1.8rem);
+}

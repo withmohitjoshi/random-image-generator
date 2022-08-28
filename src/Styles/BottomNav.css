@@ -1,0 +1,36 @@
+:root {
+  --color-bottom-nav-bg: #222831;
+  /* --color--text: #eeeeee; */
+  /* --fw-600: 600; */
+}
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: var(--color-bottom-nav-bg);
+  padding: clamp(0.35rem, 0.35rem + 0.6vw, 0.45rem) 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: clamp(0.5rem, 0.5rem + 1vw, 1rem);
+  justify-content: center;
+  align-items: center;
+}
+.bottom-nav button {
+  border: none;
+  background-color: #00adb5;
+  padding: 0.5rem 1rem;
+  color: #eeeeee;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 33rem) {
+  .bottom-nav button {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}

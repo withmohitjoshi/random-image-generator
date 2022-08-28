@@ -4,7 +4,7 @@ async function getImage() {
   const randomNumber2 = Math.floor(Math.random() * 500);
 
   const res = await axios.get(
-    `https://picsum.photos/id/${randomNumber1 + randomNumber2 + 1}/info`
+    `https://picsum.photos/id/728/info`
   );
 
   return res;

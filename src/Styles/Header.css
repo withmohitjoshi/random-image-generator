@@ -4,7 +4,7 @@
   --fw-600: 600;
 }
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   background-color: var(--color-header-bg);

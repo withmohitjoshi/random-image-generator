@@ -14,3 +14,9 @@
   border-radius: 0.4rem;
   display: block;
 }
+@media screen and (max-width: 33em) {
+  .image-container img {
+    width: 80%;
+    height: 80%;
+  }
+}

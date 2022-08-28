@@ -14,5 +14,5 @@
 .header h1 {
   color: var(--color-header-text);
   font-weight: var(--fw-600);
-  font-size: clamp(1rem, 0.8rem + 4vw, 1.8rem);
+  font-size: clamp(0.8rem, 0.8rem + 4vw, 1.6rem);
 }

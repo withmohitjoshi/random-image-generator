@@ -2,7 +2,6 @@ import React, { useEffect, useReducer, useState } from "react";
 import Header from "./Components/Header";
 import BottomNav from "./Components/BottomNav";
 import ImageContainer from "./Components/ImageContainer";
-import "./App.css";
 import getImage from "./getImage";
 
 export const ImageDownloadUrlContext = React.createContext(
@@ -43,36 +42,34 @@ function App() {
 
   return (
     <>
-      <div className="app">
       <header>
         <Header />
       </header>
-        <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
-          <ImageContainer hasError={state.hasError} loading={state.loading} />
-          <footer>
-            <BottomNav
-              handler={{
-                setImageDownloadUrl: (value) => {
-                  dispatch({
-                    type: "setImageDownloadUrl",
-                    value: value,
-                  });
-                },
-                setHasError: (value) =>
-                  dispatch({
-                    type: "setHasError",
-                    value: value,
-                  }),
-                setLoading: (value) =>
-                  dispatch({
-                    type: "setLoading",
-                    value: value,
-                  }),
-              }}
-            />
-          </footer>
-        </ImageDownloadUrlContext.Provider>
-      </div>
+      <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
+        <ImageContainer hasError={state.hasError} loading={state.loading} />
+        <footer>
+          <BottomNav
+            handler={{
+              setImageDownloadUrl: (value) => {
+                dispatch({
+                  type: "setImageDownloadUrl",
+                  value: value,
+                });
+              },
+              setHasError: (value) =>
+                dispatch({
+                  type: "setHasError",
+                  value: value,
+                }),
+              setLoading: (value) =>
+                dispatch({
+                  type: "setLoading",
+                  value: value,
+                }),
+            }}
+          />
+        </footer>
+      </ImageDownloadUrlContext.Provider>
     </>
   );
 }

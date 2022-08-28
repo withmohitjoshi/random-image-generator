@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useReducer, useState } from "react";
 import Header from "./Components/Header";
 import BottomNav from "./Components/BottomNav";
 import ImageContainer from "./Components/ImageContainer";
@@ -7,51 +6,69 @@ import getImage from "./getImage";
 
 export const ImageDownloadUrlContext = React.createContext();
 
+const initalState = {
+  hasError: false,
+  imageDownloadUrl: "",
+  loading: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "setImageDownloadUrl":
+      return { ...state, imageDownloadUrl: action.value };
+    case "setHasError":
+      return { ...state, hasError: action.value };
+    case "setLoading":
+      return { ...state, loading: action.value };
+    default:
+      return state;
+  }
+};
+
 function App() {
-  const [hasError, setHasError] = useState(false);
-  const [imageDownloadUrl, setImageDownloadUrl] = useState();
-  const [loading, setLoading] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initalState);
   useEffect(() => {
     getImage()
       .then((res) => {
-        setImageDownloadUrl(res.data.download_url);
-        setHasError(false);
+        dispatch({ type: "setImageDownloadUrl", value: res.data.download_url });
+        dispatch({ type: "setHasError", value: false });
       })
       .catch((error) => {
-        setHasError(true);
+        dispatch({ type: "setHasError", value: true });
       });
   }, []);
+
   return (
     <>
       <div className="app">
         <header>
           <Header />
         </header>
-        {imageDownloadUrl ? (
-          <ImageDownloadUrlContext.Provider value={imageDownloadUrl}>
-            <ImageContainer hasError={hasError} loading={loading} />
-            <footer>
-              <BottomNav
-                setImageDownloadUrl={setImageDownloadUrl}
-                setHasError={setHasError}
-                setLoading={setLoading}
-              />
-            </footer>
-          </ImageDownloadUrlContext.Provider>
-        ) : (
-          <>
-            <ImageDownloadUrlContext.Provider value={imageDownloadUrl}>
-              <ImageContainer hasError={hasError} loading={loading} />
-              <footer>
-                <BottomNav
-                  setImageDownloadUrl={setImageDownloadUrl}
-                  setHasError={setHasError}
-                  setLoading={setLoading}
-                />
-              </footer>
-            </ImageDownloadUrlContext.Provider>
-          </>
-        )}
+        <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
+          <ImageContainer hasError={state.hasError} loading={state.loading} />
+          <footer>
+            <BottomNav
+              handler={{
+                setImageDownloadUrl: (value) => {
+                  dispatch({
+                    type: "setImageDownloadUrl",
+                    value: value,
+                  });
+                },
+                setHasError: (value) =>
+                  dispatch({
+                    type: "setHasError",
+                    value: value,
+                  }),
+                setLoading: (value) =>
+                  dispatch({
+                    type: "setLoading",
+                    value: value,
+                  }),
+              }}
+            />
+          </footer>
+        </ImageDownloadUrlContext.Provider>
       </div>
     </>
   );

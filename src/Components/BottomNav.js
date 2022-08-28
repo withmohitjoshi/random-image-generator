@@ -24,17 +24,16 @@ function BottomNav(props) {
         <button
           id="new-image-btn"
           onClick={() => {
-            props.setLoading(true);
-
+            props.handler.setLoading(true);
             getImage()
               .then((res) => {
-                props.setImageDownloadUrl(res.data.download_url);
+                props.handler.setImageDownloadUrl(res.data.download_url);
                 setDownloadUrl(res.data.download_url);
-                props.setHasError(false);
-                props.setLoading(false);
+                props.handler.setHasError(false);
+                props.handler.setLoading(false);
               })
               .catch((error) => {
-                props.setHasError(true);                
+                props.handler.setHasError(true);
               });
           }}
         >

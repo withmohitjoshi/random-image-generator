@@ -10,11 +10,11 @@
 }
 .image-container img {
   max-width: 100%;
-  max-height: 80%;
+  max-height: 90%;
   border-radius: 0.6rem;
 }
 @media screen and (max-width: 33em) {
-  .image-container {
-    padding: 4rem 1rem 7rem 1rem;
+  .image-container img {
+    max-height: 80%;
   }
 }

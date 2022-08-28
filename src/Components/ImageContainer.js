@@ -11,10 +11,8 @@ function ImageContainer({ hasError, loading }) {
             <p>Loading ...</p>
           ) : (
             <img src={imageDownloadUrl} id="loaded-image" />
-            // "hello"
           )
         ) : (
-          // null
           <p>Something went wrong</p>
         )}
       </div>

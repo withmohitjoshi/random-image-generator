@@ -5,6 +5,7 @@
   position: fixed;
   bottom: 0;
   width: 100vw;
+  max-height: 20vh;
   background-color: var(--color-bottom-nav-bg);
   padding: clamp(0.35rem, 0.35rem + 0.6vw, 0.45rem) 0.6rem;
   display: flex;

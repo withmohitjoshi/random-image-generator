@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ImageDownloadUrlContext } from "../App";
 import "../Styles/ImageContainer.css";
-function ImageContainer({hasError,loading}) {
+function ImageContainer({ hasError, loading }) {
   const imageDownloadUrl = useContext(ImageDownloadUrlContext);
   return (
     <>

@@ -4,7 +4,9 @@ import BottomNav from "./Components/BottomNav";
 import ImageContainer from "./Components/ImageContainer";
 import getImage from "./getImage";
 
-export const ImageDownloadUrlContext = React.createContext();
+export const ImageDownloadUrlContext = React.createContext(
+  "https://picsum.photos/id/7/info"
+);
 
 const initalState = {
   hasError: false,

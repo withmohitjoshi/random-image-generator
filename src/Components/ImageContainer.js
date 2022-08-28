@@ -3,11 +3,6 @@ import { ImageDownloadUrlContext } from "../App";
 import "../Styles/ImageContainer.css";
 function ImageContainer({ hasError, loading }) {
   const imageDownloadUrl = useContext(ImageDownloadUrlContext);
-  useEffect(() => {
-    const imageContainer = document.getElementById("image-container");
-    const header = document.getElementById("header");
-    const bottomNav = document.getElementById("bottom-nav");
-  });
   return (
     <>
       <div className="image-container" id="image-container">

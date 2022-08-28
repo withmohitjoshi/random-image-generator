@@ -2,7 +2,7 @@
   --color-bottom-nav-bg: #222831;
 }
 .bottom-nav {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100vw;
   background-color: var(--color-bottom-nav-bg);

@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import BottomNav from "./Components/BottomNav";
 import ImageContainer from "./Components/ImageContainer";
 import getImage from "./getImage";
-
+import "./App.css"
 export const ImageDownloadUrlContext = React.createContext(
   "https://picsum.photos/id/7/info"
 );
@@ -42,12 +42,10 @@ function App() {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
-        <ImageContainer hasError={state.hasError} loading={state.loading} />
-        <footer>
+      <div className="App">
+        <ImageDownloadUrlContext.Provider value={state.imageDownloadUrl}>
+          <Header />
+          <ImageContainer hasError={state.hasError} loading={state.loading} />
           <BottomNav
             handler={{
               setImageDownloadUrl: (value) => {
@@ -68,8 +66,8 @@ function App() {
                 }),
             }}
           />
-        </footer>
-      </ImageDownloadUrlContext.Provider>
+        </ImageDownloadUrlContext.Provider>
+      </div>
     </>
   );
 }

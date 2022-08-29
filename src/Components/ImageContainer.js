@@ -13,7 +13,10 @@ function ImageContainer({ hasError, loading }) {
             <img src={imageDownloadUrl} id="loaded-image" />
           )
         ) : (
+          <div style={{textAlign:'center'}}>
           <p>Something went wrong</p>
+          <p>Click New Image</p>
+          </div>
         )}
       </div>
     </>

@@ -23,7 +23,7 @@
   color: #eeeeee;
   font-size: 1rem;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   font-weight: 600;
 }
 @media screen and (max-width: 33em) {
@@ -32,7 +32,8 @@
   }
   .bottom-nav button {
     width: 100%;
-    padding: 0.4rem 0;
+    padding: 0.3rem 0;
     font-weight: 500;
+    font-size: 0.85rem;
   }
 }

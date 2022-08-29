@@ -4,18 +4,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: 1px solid #000;
-  padding: 4rem 1rem;
-  
+  padding: 2rem 1rem;
 }
 .image-container img {
-  max-width: 100%;
-  max-height: 90%;
+  max-width: 80%;
+  max-height: 80%;
   border-radius: 0.6rem;
-  box-shadow: 0px 0px 10px 4px rgb(0, 0, 0,0.3);
+  box-shadow: 0px 0px 8px 4px rgb(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 33em) {
+@media screen and (max-height: 26em) {
   .image-container img {
-    max-height: 80%;
+    max-height: 60%;
   }
 }

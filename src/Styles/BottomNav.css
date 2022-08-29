@@ -2,8 +2,10 @@
   --color-bottom-nav-bg: #222831;
 }
 .bottom-nav {
+  position: fixed;
+  bottom: 0;
   width: 100vw;
-  height: min-content;
+  max-height: 20vh;
   background-color: var(--color-bottom-nav-bg);
   padding: clamp(0.35rem, 0.35rem + 0.6vw, 0.45rem) 0.6rem;
   display: flex;

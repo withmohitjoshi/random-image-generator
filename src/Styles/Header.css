@@ -4,12 +4,13 @@
   --fw-600: 600;
 }
 .header {
+  position: fixed;
+  top: 0;
   width: 100vw;
-  height: min-content;
+  max-height: 20vh;
   background-color: var(--color-header-bg);
   padding: clamp(0.35rem, 0.35rem + 0.6vw, 0.45rem) 0;
-  display: flex;
-  place-content: center;
+  text-align: center;
 }
 .header h1 {
   color: var(--color-header-text);

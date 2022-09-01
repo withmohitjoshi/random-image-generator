@@ -1,6 +1,6 @@
 # Random Image Generator
 
-I Created this [Random Image Generator](https://withmohitjoshi.github.io/login-signup-ui/) where you'll get random images and if you like any image you can download it too.
+I Created this [Random Image Generator](https://withmohitjoshi.github.io/random-image-generator/) where you'll get random images and if you like any image you can download it too.
 
 - [Random Image Generator](#random-image-generator)
     - [Links](#links)
